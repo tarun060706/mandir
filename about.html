@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* font-family: "Poppins", sans-serif; */
+      background: #f5f2ed;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      width: 100%;
+      background: #f6f2ed;
+      border-top: 4px solid #2d2d2d;
+      padding: 18px 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* LEFT LOGO */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-circle {
+      width: 48px;
+      height: 48px;
+      background: #ef8c2f;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .logo-text {
+      font-family: "Cinzel", serif;
+      font-size: 18px;
+      /* letter-spacing: px; */
+      color: #555;
+      font-weight: 500;
+    }
+
+    /* NAV LINKS */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 42px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #666;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      transition: 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: #ef8c2f;
+    }
+
+    .nav-links .active {
+      color: #ef8c2f;
+    }
+
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .navbar {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 20px;
+      }
+
+      .logo-text {
+        font-size: 15px;
+        letter-spacing: 3px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .darshan-btn {
+        padding: 12px 22px;
+        font-size: 12px;
+      }
+    }
+
+
+    /* HERO SECTION */
+
+    .hero{
+      width:100%;
+      height:50vh;
+      position:relative;
+      background:
+      linear-gradient(rgba(20,10,5,0.60),rgba(20,10,5,0.65)),
+      url('aboutmandir.png') center/cover no-repeat;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    /* DARK OVERLAY */
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+      to bottom,
+      /* rgba(72,20,0,0.25), */
+      /* rgba(0,0,0,0.45) */
+      );
+    }
+
+    /* CONTENT */
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:1100px;
+      color:white;
+    }
+
+    /* SANSKRIT TEXT */
+
+    .subtitle{
+      color:#d9a441;
+      font-size:25px;
+      font-family:'Cormorant Garamond', serif;
+      font-style:italic;
+      margin-bottom:20px;
+      font-weight:500;
+    }
+
+    /* MAIN TITLE */
+
+    .main-title{
+      font-family:'Cormorant Garamond', serif;
+      font-size:80px;
+      line-height:1;
+      font-weight:400;
+      letter-spacing:2px;
+      color:#f7f1ea;
+      text-transform:uppercase;
+    }
+
+    .highlight{
+      display:block;
+      color:#d9a441;
+      font-style:italic;
+      margin-top:10px;
+      text-transform:none;
+    }
+
+    /* DESCRIPTION */
+
+    .description{
+      max-width:850px;
+      margin:35px auto;
+      font-size:22px;
+      line-height:1.7;
+      color:rgba(255,255,255,0.88);
+      font-weight:300;
+    }
+
+    /* BUTTONS */
+
+    .hero-buttons{
+      display:flex;
+      justify-content:center;
+      gap:22px;
+      flex-wrap:wrap;
+      margin-top:45px;
+    }
+
+    .btn{
+      padding:15px 20px;
+      text-decoration:none;
+      border-radius:20px;
+      font-size:15px;
+      letter-spacing:1px;
+      font-weight:500;
+      transition:0.4s ease;
+      text-transform:uppercase;
+    }
+
+    .primary-btn{
+      background:#ef9133;
+      color:white;
+      box-shadow:0 10px 30px rgba(239,145,51,0.35);
+    }
+
+    .primary-btn:hover{
+      background:#ff9f3f;
+      transform:translateY(-4px);
+    }
+
+    .secondary-btn{
+      border:1px solid rgba(255,255,255,0.25);
+      color:white;
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(4px);
+    }
+
+    .secondary-btn:hover{
+      background:white;
+      color:#111;
+    }
+
+    /* SCROLL ICON */
+
+    .scroll-down{
+      position:absolute;
+      bottom:28px;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:42px;
+      color:rgba(255,255,255,0.7);
+      animation:bounce 2s infinite;
+      z-index:2;
+    }
+
+    @keyframes bounce{
+      0%,20%,50%,80%,100%{
+        transform:translateX(-50%) translateY(0);
+      }
+
+      40%{
+        transform:translateX(-50%) translateY(-12px);
+      }
+
+      60%{
+        transform:translateX(-50%) translateY(-6px);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1200px){
+
+      .main-title{
+        font-size:90px;
+      }
+
+      .subtitle{
+        font-size:28px;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .hero{
+        height:auto;
+        min-height:100vh;
+        padding:120px 20px;
+      }
+
+      .main-title{
+        font-size:58px;
+      }
+
+      .subtitle{
+        font-size:24px;
+      }
+
+      .description{
+        font-size:18px;
+        line-height:1.6;
+      }
+
+      .btn{
+        width:100%;
+        max-width:320px;
+      }
+    }
+
+    @media(max-width:480px){
+
+      .main-title{
+        font-size:46px;
+      }
+
+      .subtitle{
+        font-size:20px;
+      }
+
+      .description{
+        font-size:16px;
+      }
+    }
+
+
+    .history-section{
+      width:100%;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:60px 20px;
+    }
+
+    .history-container{
+      max-width:1200px;
+      width:100%;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .history-image img{
+      width:100%;
+      height:700px;
+      object-fit:cover;
+      border-radius:20px;
+      box-shadow:0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .history-content small{
+      color:#d9822b;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .history-content h1{
+      font-family:'Cormorant Garamond', serif;
+      font-size:35px;
+      line-height:0.95;
+      font-weight:300;
+      margin:18px 0 35px;
+      color:#3d332d;
+    }
+
+    .history-content p{
+      font-size:18px;
+      line-height:2;
+      margin-bottom:28px;
+      color:#666;
+    }
+
+    @media(max-width:950px){
+
+      .history-container{
+        grid-template-columns:1fr;
+      }
+
+      .history-image img{
+        height:500px;
+      }
+
+      .history-content h1{
+        font-size:52px;
+      }
+    }
+
+    @media(max-width:600px){
+
+      .history-section{
+        padding:40px 15px;
+      }
+
+      .history-image img{
+        height:400px;
+      }
+
+      .history-content h1{
+        font-size:40px;
+      }
+
+      .history-content p{
+        font-size:16px;
+        line-height:1.8;
+      }
+    }
+
+    .timing-section{
+      width:100%;
+      min-height:100vh;
+      padding:50px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    .container{
+      width:100%;
+      max-width:1200px;
+    }
+
+    /* Heading */
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title span{
+      display:block;
+      color:#e58b3b;
+      font-size:14px;
+      letter-spacing:2px;
+      font-weight:600;
+      margin-bottom:15px;
+      text-transform:uppercase;
+    }
+
+    .section-title h1{
+      font-family:'Cormorant Garamond', serif;
+      font-size:72px;
+      font-weight:300;
+      color:#403632;
+      line-height:1;
+    }
+
+    .underline{
+      width:120px;
+      height:2px;
+      background:#d6b26b;
+      margin:28px auto 0;
+    }
+
+    /* Table */
+
+    .timing-table{
+      background:#ffffff;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 4px 15px rgba(0,0,0,0.06);
+      border:1px solid #e7ddd3;
+    }
+
+    .timing-row{
+      display:grid;
+      grid-template-columns:220px 1fr 1.5fr;
+      align-items:center;
+      padding:0px 40px;
+      border-bottom:1px solid #e9dfd5;
+    }
+
+    .timing-row:last-child{
+      border-bottom:none;
+    }
+
+    .time{
+      color:#f08b42;
+      font-size:18px;
+      font-family:'Cormorant Garamond', serif;
+      font-weight:500;
+    }
+
+    .ritual{
+      font-family:'Cormorant Garamond', serif;
+      font-size:20px;
+      color:#4a3f39;
+      font-weight:500;
+      letter-spacing:0.5px;
+    }
+
+    .description{
+      font-size:18px;
+      color:#777;
+      line-height:1.7;
+    }
+
+    /* Responsive */
+
+    @media(max-width:900px){
+
+      .section-title h1{
+        font-size:50px;
+      }
+
+      .timing-row{
+        grid-template-columns:1fr;
+        gap:12px;
+        padding:28px;
+      }
+
+      .ritual{
+        font-size:24px;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .section-title h1{
+        font-size:38px;
+      }
+
+      .section-title span{
+        font-size:12px;
+        letter-spacing:4px;
+      }
+
+      .description{
+        font-size:16px;
+      }
+
+      .time{
+        font-size:22px;
+      }
+
+    }
+
+    /* ===== FOOTER ===== */
+
+.mandir-footer{
+  background:#8c000d;
+  padding:70px 5% 40px;
+  color:white;
+  font-family:'Poppins',sans-serif;
+}
+
+/* CONTAINER */
+
+.mandir-footer-container{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:100px;
+  padding-bottom:60px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+/* BRAND */
+
+.mandir-footer-brand{
+  max-width:520px;
+}
+
+/* LOGO */
+
+.mandir-footer-logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:40px;
+}
+
+.mandir-footer-logo-circle{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:white;
+  color:#8c000d;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  font-weight:bold;
+}
+
+.mandir-footer-logo-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  letter-spacing:2px;
+  color:#fff5eb;
+}
+
+/* QUOTE */
+
+.mandir-footer-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:25px;
+  line-height:1.2;
+  font-style:italic;
+  color:#fff5ec;
+  margin-bottom:20px;
+}
+
+.mandir-footer-subtitle{
+  font-size:20px;
+  color:rgba(255,255,255,0.7);
+  font-style:italic;
+  line-height:1.7;
+}
+
+/* TITLES */
+
+.mandir-footer-heading{
+  color:#e7a137;
+  font-size:14px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  margin-bottom:35px;
+  font-weight:500;
+}
+
+/* LINKS */
+
+.mandir-footer-links{
+  list-style:none;
+}
+
+.mandir-footer-links li{
+  margin-bottom:20px;
+}
+
+.mandir-footer-links li a{
+  text-decoration:none;
+  color:rgba(255,255,255,0.78);
+  font-size:18px;
+  transition:0.3s;
+}
+
+.mandir-footer-links li a:hover{
+  color:white;
+  padding-left:6px;
+}
+
+/* CONTACT */
+
+.mandir-footer-contact-area p{
+  color:rgba(255,255,255,0.78);
+  margin-bottom:20px;
+  font-size:18px;
+}
+
+/* SOCIAL ICONS */
+
+.mandir-footer-socials{
+  display:flex;
+  gap:18px;
+  margin-top:35px;
+}
+
+.mandir-footer-socials a{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  text-decoration:none;
+  font-size:20px;
+  transition:0.3s;
+}
+
+.mandir-footer-socials a:hover{
+  background:white;
+  color:#8c000d;
+  transform:translateY(-5px);
+}
+
+/* BOTTOM */
+
+.mandir-footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+  padding-top:40px;
+}
+
+.mandir-footer-bottom p{
+  color:rgba(255,255,255,0.55);
+  font-size:15px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+  .mandir-footer-container{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .mandir-footer-brand{
+    grid-column:1/-1;
+  }
+}
+
+@media(max-width:768px){
+
+  .mandir-footer{
+    padding:70px 25px 35px;
+  }
+
+  .mandir-footer-container{
+    grid-template-columns:1fr;
+    gap:60px;
+  }
+
+  .mandir-footer-logo-text{
+    font-size:24px;
+    letter-spacing:3px;
+  }
+
+  .mandir-footer-quote{
+    font-size:42px;
+  }
+
+  .mandir-footer-subtitle{
+    font-size:18px;
+  }
+
+  .mandir-footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .mandir-footer-bottom p{
+    letter-spacing:2px;
+    line-height:1.6;
+  }
+}
+
+@media(max-width:480px){
+
+  .mandir-footer-quote{
+    font-size:34px;
+  }
+
+  .mandir-footer-socials a{
+    width:48px;
+    height:48px;
+  }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">
+      <div class="logo-circle">ॐ</div>
+      <div class="logo-text">Shree Pitambar Pith Dham</div>
+    </div>
+
+    <!-- NAV LINKS -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="our-works.html">OUR WORKS & ACTIVITIES</a></li>
+      <li><a href="committee.html">COMMITTEE</a></li>
+      <li><a href="#">GALLERY</a></li>
+      <li><a href="#">EVENTS</a></li>
+      <!-- <li><a href="#">DONATE</a></li> -->
+      <li><a href="#">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h3 class="subtitle">About The Mandir</h3>
+      <h1 class="main-title">
+        A Lamp Lit in 1984,
+        <span class="highlight">Still Burning Bright</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="history-section">
+
+    <div class="history-container">
+
+      <!-- Left Image -->
+      <div class="history-image">
+        <img src="aboutmandir.png" alt="Temple Image">
+      </div>
+
+      <!-- Right Content -->
+      <div class="history-content">
+
+        <small>OUR HISTORY</small>
+
+        <h1>
+          FOUR DECADES OF DEVOTION
+        </h1>
+
+        <p>
+          Founded in 1984 by a small circle of devoted families,
+          Shree Sanatan Mandir began as a humble shrine in a single room.
+          Through decades of community seva, it has grown into a vibrant
+          cultural and spiritual sanctuary — yet the original lamp lit on
+          its first day continues to burn without interruption.
+        </p>
+
+        <p>
+          Every stone, every carving, every garland here has been offered
+          by hands that believe service to others is service to the divine.
+        </p>
+
+        <div class="history-content">
+            <small>OUR VISION & MISSION</small>
+
+            <p>
+            At Shree Pitambar Pith Dham, our vision is to create a sanctuary where
+            ancient wisdom meets modern devotion — a place where every visitor feels
+            the warmth of community and the light of spiritual growth.
+            </p>
+
+            <p>
+                Our mission is to preserve and share our sacred traditions through selfless
+                service, educational programs, and cultural events that inspire and uplift
+                all who walk through our doors.
+            </p>
+
+        </div>
+
+        </div>
+    </div>
+  </section>
+
+   <section class="timing-section">
+
+    <div class="container">
+
+      <!-- Heading -->
+      <div class="section-title">
+
+        <span>DAILY RITUALS</span>
+
+        <h1>
+          Temple Timings & Pūjā
+        </h1>
+
+        <div class="underline"></div>
+
+      </div>
+
+      <!-- Timing Table -->
+      <div class="timing-table">
+
+        <div class="timing-row">
+          <div class="time">05:00 AM</div>
+          <div class="ritual">Mangala Aarti</div>
+          <div class="description">
+            Awakening of the deity with conch and bell
+          </div>
+        </div>
+
+        <div class="timing-row">
+          <div class="time">06:00 AM</div>
+          <div class="ritual">Morning Aarti</div>
+          <div class="description">
+            Daily darshan and abhishekam
+          </div>
+        </div>
+
+        <div class="timing-row">
+          <div class="time">12:00 PM</div>
+          <div class="ritual">Bhog Aarti</div>
+          <div class="description">
+            Offering of food to the deity
+          </div>
+        </div>
+
+        <div class="timing-row">
+          <div class="time">04:30 PM</div>
+          <div class="ritual">Evening Darshan</div>
+          <div class="description">
+            Open for devotees
+          </div>
+        </div>
+
+        <div class="timing-row">
+          <div class="time">07:30 PM</div>
+          <div class="ritual">Sandhya Aarti</div>
+          <div class="description">
+            Evening lamp ceremony
+          </div>
+        </div>
+
+        <div class="timing-row">
+          <div class="time">09:00 PM</div>
+          <div class="ritual">Shayan Aarti</div>
+          <div class="description">
+            Closing rituals for the night
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer class="mandir-footer">
+
+  <div class="mandir-footer-container">
+
+    <!-- LEFT SIDE -->
+
+    <div class="mandir-footer-brand">
+
+      <div class="mandir-footer-logo-wrap">
+
+        <div class="mandir-footer-logo-circle">
+          ॐ
+        </div>
+
+        <div class="mandir-footer-logo-text">
+          SHREE PITAMBAR PITH DHAM
+        </div>
+
+      </div>
+
+      <h2 class="mandir-footer-quote">
+        “Lokah Samastah Sukhino Bhavantu”
+      </h2>
+
+      <p class="mandir-footer-subtitle">
+        May all beings everywhere be happy and free.
+      </p>
+
+    </div>
+
+    <!-- QUICK LINKS -->
+
+    <div class="mandir-footer-links-area">
+
+      <h4 class="mandir-footer-heading">
+        Quick Links
+      </h4>
+
+      <ul class="mandir-footer-links">
+
+        <li><a href="#">About the Mandir</a></li>
+        <li><a href="#">Our Works</a></li>
+        <li><a href="#">Events</a></li>
+
+      </ul>
+
+    </div>
+
+    <!-- CONTACT -->
+
+    <div class="mandir-footer-contact-area">
+
+      <h4 class="mandir-footer-heading">
+        Connect
+      </h4>
+
+      <p>108 Sacred Way</p>
+      <p>Spiritual District</p>
+      <p>Biswanth — 784179</p>
+
+      <!-- SOCIAL -->
+
+      <div class="mandir-footer-socials">
+
+        <a href="#">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+          <i class="fab fa-youtube"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+
+  <div class="mandir-footer-bottom">Developed by Tarun Chetry</div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Committee - Shree Pitambar Pith Dham</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+         * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* font-family: "Poppins", sans-serif; */
+      background: #f5f2ed;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      width: 100%;
+      background: #f6f2ed;
+      border-top: 4px solid #2d2d2d;
+      padding: 18px 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* LEFT LOGO */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-circle {
+      width: 48px;
+      height: 48px;
+      background: #ef8c2f;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .logo-text {
+      font-family: "Cinzel", serif;
+      font-size: 18px;
+      /* letter-spacing: px; */
+      color: #555;
+      font-weight: 500;
+    }
+
+    /* NAV LINKS */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 42px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #666;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      transition: 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: #ef8c2f;
+    }
+
+    .nav-links .active {
+      color: #ef8c2f;
+    }
+
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .navbar {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 20px;
+      }
+
+      .logo-text {
+        font-size: 15px;
+        letter-spacing: 3px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .darshan-btn {
+        padding: 12px 22px;
+        font-size: 12px;
+      }
+    }
+
+    .committee-section{
+      width:100%;
+      padding:70px 20px;
+    }
+
+    .container{
+      max-width:1350px;
+      margin:auto;
+    }
+
+    /* Header */
+
+    .top-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:20px;
+      margin-bottom:45px;
+      flex-wrap:wrap;
+    }
+
+    .title-box span{
+      display:block;
+      color:#e4863c;
+      font-size:14px;
+      letter-spacing:5px;
+      text-transform:uppercase;
+      margin-bottom:16px;
+      font-weight:600;
+    }
+
+    .title-box h1{
+      font-family:'Cormorant Garamond', serif;
+      font-size:76px;
+      font-weight:400;
+      color:#3b322f;
+      line-height:1;
+    }
+
+    /* Search */
+
+    .search-box{
+      width:320px;
+      background:#fff;
+      border:1px solid #ddd2c6;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      padding:15px 18px;
+    }
+
+    .search-box i{
+      color:#aaa;
+      margin-right:10px;
+      font-size:16px;
+    }
+
+    .search-box input{
+      width:100%;
+      border:none;
+      outline:none;
+      background:transparent;
+      font-size:16px;
+      color:#666;
+    }
+
+    /* Cards */
+
+    .members-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:28px;
+    }
+
+    .member-card{
+      background:#fff;
+      border-radius:22px;
+      border:1px solid #ddd1c5;
+      padding:26px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+      transition:0.3s ease;
+    }
+
+    .member-card:hover{
+      /* transform:translateY(-5px); */
+    }
+
+    .member-card img{
+      width:100%;
+      height:255px;
+      object-fit:cover;
+      border-radius:12px;
+      margin-bottom:24px;
+    }
+
+    .member-name{
+      font-family:'Cormorant Garamond', serif;
+      font-size:24px;
+      color:#4b3e38;
+      margin-bottom:8px;
+      line-height:1.2;
+    }
+
+    .member-role{
+      color:#eb8a42;
+      text-transform:uppercase;
+      letter-spacing:4px;
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:18px;
+    }
+
+    .member-desc{
+      color:#777;
+      font-size:15px;
+      line-height:1.8;
+      margin-bottom:22px;
+    }
+
+    .divider{
+      width:100%;
+      height:1px;
+      background:#e5d8ca;
+      margin-bottom:18px;
+    }
+
+    .contact-info{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:12px;
+      color:#666;
+      font-size:15px;
+    }
+
+    .contact-info i{
+      color:#ea8b42;
+      font-size:14px;
+    }
+
+    /* Responsive */
+
+    @media(max-width:1200px){
+
+      .members-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .top-content{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .title-box h1{
+        font-size:52px;
+      }
+
+      .search-box{
+        width:100%;
+      }
+
+      .members-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+    @media(max-width:500px){
+
+      .title-box h1{
+        font-size:38px;
+      }
+
+      .member-card{
+        padding:20px;
+      }
+
+    }
+
+    /* ===== FOOTER ===== */
+
+.mandir-footer{
+  background:#8c000d;
+  padding:70px 5% 40px;
+  color:white;
+  font-family:'Poppins',sans-serif;
+}
+
+/* CONTAINER */
+
+.mandir-footer-container{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:100px;
+  padding-bottom:60px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+/* BRAND */
+
+.mandir-footer-brand{
+  max-width:520px;
+}
+
+/* LOGO */
+
+.mandir-footer-logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:40px;
+}
+
+.mandir-footer-logo-circle{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:white;
+  color:#8c000d;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  font-weight:bold;
+}
+
+.mandir-footer-logo-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  letter-spacing:2px;
+  color:#fff5eb;
+}
+
+/* QUOTE */
+
+.mandir-footer-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:25px;
+  line-height:1.2;
+  font-style:italic;
+  color:#fff5ec;
+  margin-bottom:20px;
+}
+
+.mandir-footer-subtitle{
+  font-size:20px;
+  color:rgba(255,255,255,0.7);
+  font-style:italic;
+  line-height:1.7;
+}
+
+/* TITLES */
+
+.mandir-footer-heading{
+  color:#e7a137;
+  font-size:14px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  margin-bottom:35px;
+  font-weight:500;
+}
+
+/* LINKS */
+
+.mandir-footer-links{
+  list-style:none;
+}
+
+.mandir-footer-links li{
+  margin-bottom:20px;
+}
+
+.mandir-footer-links li a{
+  text-decoration:none;
+  color:rgba(255,255,255,0.78);
+  font-size:18px;
+  transition:0.3s;
+}
+
+.mandir-footer-links li a:hover{
+  color:white;
+  padding-left:6px;
+}
+
+/* CONTACT */
+
+.mandir-footer-contact-area p{
+  color:rgba(255,255,255,0.78);
+  margin-bottom:20px;
+  font-size:18px;
+}
+
+/* SOCIAL ICONS */
+
+.mandir-footer-socials{
+  display:flex;
+  gap:18px;
+  margin-top:35px;
+}
+
+.mandir-footer-socials a{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  text-decoration:none;
+  font-size:20px;
+  transition:0.3s;
+}
+
+.mandir-footer-socials a:hover{
+  background:white;
+  color:#8c000d;
+  transform:translateY(-5px);
+}
+
+/* BOTTOM */
+
+.mandir-footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+  padding-top:40px;
+}
+
+.mandir-footer-bottom p{
+  color:rgba(255,255,255,0.55);
+  font-size:15px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+  .mandir-footer-container{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .mandir-footer-brand{
+    grid-column:1/-1;
+  }
+}
+
+@media(max-width:768px){
+
+  .mandir-footer{
+    padding:70px 25px 35px;
+  }
+
+  .mandir-footer-container{
+    grid-template-columns:1fr;
+    gap:60px;
+  }
+
+  .mandir-footer-logo-text{
+    font-size:24px;
+    letter-spacing:3px;
+  }
+
+  .mandir-footer-quote{
+    font-size:42px;
+  }
+
+  .mandir-footer-subtitle{
+    font-size:18px;
+  }
+
+  .mandir-footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .mandir-footer-bottom p{
+    letter-spacing:2px;
+    line-height:1.6;
+  }
+}
+
+@media(max-width:480px){
+
+  .mandir-footer-quote{
+    font-size:34px;
+  }
+
+  .mandir-footer-socials a{
+    width:48px;
+    height:48px;
+  }
+}
+
+    </style>
+</head>
+<body>
+     <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">
+      <div class="logo-circle">ॐ</div>
+      <div class="logo-text">Shree Pitambar Pith Dham</div>
+    </div>
+
+    <!-- NAV LINKS -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="our-works.html">OUR WORKS & ACTIVITIES</a></li>
+      <li><a href="committee.html">COMMITTEE</a></li>
+      <li><a href="#">GALLERY</a></li>
+      <li><a href="#">EVENTS</a></li>
+      <!-- <li><a href="#">DONATE</a></li> -->
+      <li><a href="#">CONTACT</a></li>
+    </ul>
+  </nav>
+
+   <section class="committee-section">
+
+    <div class="container">
+
+      <!-- Top Content -->
+      <div class="top-content">
+
+        <div class="title-box">
+
+          <span>THE GUARDIANS</span>
+
+          <h1>Committee Members</h1>
+
+        </div>
+
+        <!-- Search Box -->
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Find a member...">
+        </div>
+
+      </div>
+
+      <!-- Members Grid -->
+      <div class="members-grid">
+
+        <!-- Card 1 -->
+        <div class="member-card">
+
+          <img src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?q=80&w=1200&auto=format&fit=crop" alt="President">
+
+          <h3 class="member-name">Pt. Rajesh Sharma</h3>
+
+          <div class="member-role">President</div>
+
+          <p class="member-desc">
+            Leading with spiritual vision for over 15 years
+            in temple administration.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="contact-info">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 98XXX 11111</span>
+          </div>
+
+          <div class="contact-info">
+            <i class="fa-regular fa-envelope"></i>
+            <span>president@sanatan.org</span>
+          </div>
+
+        </div>
+
+        <!-- Card 2 -->
+        <div class="member-card">
+
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="Treasurer">
+
+          <h3 class="member-name">Smt. Meena Iyer</h3>
+
+          <div class="member-role">Treasurer</div>
+
+          <p class="member-desc">
+            Ensuring transparency and growth of temple
+            welfare funds with devotion.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="contact-info">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 98XXX 22222</span>
+          </div>
+
+          <div class="contact-info">
+            <i class="fa-regular fa-envelope"></i>
+            <span>treasurer@sanatan.org</span>
+          </div>
+
+        </div>
+
+        <!-- Card 3 -->
+        <div class="member-card">
+
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Secretary">
+
+          <h3 class="member-name">Shri Anil Verma</h3>
+
+          <div class="member-role">Secretary</div>
+
+          <p class="member-desc">
+            Managing daily operations and coordinating
+            between various seva wings.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="contact-info">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 98XXX 33333</span>
+          </div>
+
+          <div class="contact-info">
+            <i class="fa-regular fa-envelope"></i>
+            <span>secretary@sanatan.org</span>
+          </div>
+
+        </div>
+
+        <!-- Card 4 -->
+        <div class="member-card">
+
+          <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=1200&auto=format&fit=crop" alt="Trustee">
+
+          <h3 class="member-name">Shri V. Ramakrishnan</h3>
+
+          <div class="member-role">Trustee</div>
+
+          <p class="member-desc">
+            Providing legal and strategic guidance for
+            temple development projects.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="contact-info">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 98XXX 44444</span>
+          </div>
+
+          <div class="contact-info">
+            <i class="fa-regular fa-envelope"></i>
+            <span>trustee@sanatan.org</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+
+<footer class="mandir-footer">
+
+  <div class="mandir-footer-container">
+
+    <!-- LEFT SIDE -->
+
+    <div class="mandir-footer-brand">
+
+      <div class="mandir-footer-logo-wrap">
+
+        <div class="mandir-footer-logo-circle">
+          ॐ
+        </div>
+
+        <div class="mandir-footer-logo-text">
+          SHREE PITAMBAR PITH DHAM
+        </div>
+
+      </div>
+
+      <h2 class="mandir-footer-quote">
+        “Lokah Samastah Sukhino Bhavantu”
+      </h2>
+
+      <p class="mandir-footer-subtitle">
+        May all beings everywhere be happy and free.
+      </p>
+
+    </div>
+
+    <!-- QUICK LINKS -->
+
+    <div class="mandir-footer-links-area">
+
+      <h4 class="mandir-footer-heading">
+        Quick Links
+      </h4>
+
+      <ul class="mandir-footer-links">
+
+        <li><a href="#">About the Mandir</a></li>
+        <li><a href="#">Our Works</a></li>
+        <li><a href="#">Events</a></li>
+
+      </ul>
+
+    </div>
+
+    <!-- CONTACT -->
+
+    <div class="mandir-footer-contact-area">
+
+      <h4 class="mandir-footer-heading">
+        Connect
+      </h4>
+
+      <p>108 Sacred Way</p>
+      <p>Spiritual District</p>
+      <p>Biswanth — 784179</p>
+
+      <!-- SOCIAL -->
+
+      <div class="mandir-footer-socials">
+
+        <a href="#">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+          <i class="fab fa-youtube"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+
+  <div class="mandir-footer-bottom">Developed by Tarun Chetry</div>
+
+</footer>
+
+</body>
+</html>
