@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OUR WORK</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <title>Events</title>
     <style>
-        *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body{
-      font-family:'Inter', sans-serif;
+    body {
+      /* font-family: "Poppins", sans-serif; */
+      background: #f5f2ed;
     }
 
-     /* NAVBAR */
+    /* NAVBAR */
     .navbar {
       width: 100%;
       position: sticky;
@@ -134,184 +133,156 @@
       }
     }
 
-    .service-section{
-      width:100%;
-      min-height:250px;
-      background:#8b000f;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:40px 20px;
-    }
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    .service-content span{
-      display:block;
-      color:#d8a327;
-      font-size:15px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      margin-bottom:25px;
-      font-weight:500;
-    }
+body{
+    background:#f7f3ee;
+    font-family:Georgia, serif;
+}
 
-    .service-content h1{
-      font-family:'Cormorant Garamond', serif;
-      color:#f6f2ed;
-      font-size:50px;
-      font-weight:300;
-      line-height:1;
-    }
+.utsav-section{
+    width:80%;
+    margin:auto;
+    padding:40px 0 60px;
+}
 
-    /* Responsive */
+.title-box{
+    text-align:center;
+    margin-bottom:45px;
+}
 
-    @media(max-width:900px){
+.title-box p{
+    color:#d88c45;
+    letter-spacing:4px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:10px;
+}
 
-      .service-content h1{
-        font-size:60px;
-      }
+.title-box h2{
+    font-size:62px;
+    color:#1b3555;
+    font-weight:500;
+    text-transform:capitalize;
+}
 
-    }
+.line{
+    width:95px;
+    height:2px;
+    background:#d8b274;
+    margin:16px auto;
+}
 
-    @media(max-width:600px){
+.utsav-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
 
-      .service-section{
-        min-height:250px;
-      }
+.event-card{
+    background:#fff;
+    border:1px solid #e5d8c9;
+    border-radius:18px;
+    padding:28px;
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    transition:.3s;
+}
 
-      .service-content span{
-        font-size:12px;
-        letter-spacing:4px;
-      }
+.event-card:hover{
+    transform:translateY(-4px);
+}
 
-      .service-content h1{
-        font-size:38px;
-        line-height:1.2;
-      }
+.active{
+    color:white;
+    border:none;
+}
 
-    }
+.date-box{
+    min-width:78px;
+    height:78px;
+    background:#efe4d5;
+    border-radius:10px;
+    text-align:center;
+    padding-top:10px;
+}
 
-    .activities-section{
-      width:100%;
-      padding:70px 20px;
-      background:#f9f5f0;
-    }
+.active .date-box{
+    background:#f29b38;
+    color:white;
+}
 
-    .container{
-      max-width:1200px;
-      margin:auto;
-    }
+.date-box h3{
+    font-size:22px;
+    margin-bottom:4px;
+    color:#1b3555;
+}
 
-    /* Heading */
+.date-box span{
+    font-size:12px;
+    letter-spacing:2px;
+    color:#555;
+}
 
-    .section-title{
-      text-align:center;
-      margin-bottom:50px;
-    }
+.active .date-box h3,
+.active .date-box span{
+    color:white;
+}
 
-    .section-title span{
-      display:block;
-      color:#e5893c;
-      font-size:13px;
-      letter-spacing:5px;
-      text-transform:uppercase;
-      margin-bottom:18px;
-      font-weight:600;
-    }
+.event-info h3{
+    font-size:20px;
+    color:#1b3555;
+    margin-bottom:10px;
+    font-weight:500;
+}
 
-    .section-title h1{
-      font-family:'Cormorant Garamond', serif;
-      font-size:64px;
-      font-weight:400;
-      color:#3d332f;
-      line-height:1.1;
-    }
+.event-info h4{
+    color:#f08a32;
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:14px;
+}
 
-    .underline{
-      width:90px;
-      height:2px;
-      background:#d5b06c;
-      margin:18px auto 0;
-    }
+.event-info p{
+    color:#6b7280;
+    line-height:1.7;
+    font-size:16px;
+}
 
-    /* Cards */
+.active .event-info h3,
+.active .event-info p{
+    color:white;
+}
 
-    .activities-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-    }
+.bottom-note{
+    text-align:center;
+    margin-top:55px;
+    color:#6b7280;
+    font-size:17px;
+}
 
-    .activity-card{
-      background:#fff;
-      border-radius:14px;
-      overflow:hidden;
-      border:1px solid #ddd1c4;
-      box-shadow:0 3px 10px rgba(0,0,0,0.05);
-      transition:0.3s ease;
-    }
+@media(max-width:900px){
 
-    .activity-card:hover{
-      transform:translateY(-5px);
-    }
-
-    .activity-card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      display:block;
-    }
-
-    .card-content{
-      padding:18px;
-    }
-
-    .card-content h3{
-      font-family:'Cormorant Garamond', serif;
-      font-size:30px;
-      font-weight:500;
-      color:#704b2f;
-      margin-bottom:10px;
-      line-height:1.1;
-    }
-
-    .card-content p{
-      font-size:14px;
-      line-height:1.7;
-      color:#777;
-    }
-
-    /* Responsive */
-
-    @media(max-width:950px){
-
-      .activities-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .section-title h1{
-        font-size:48px;
-      }
-
-    }
-
-    @media(max-width:650px){
-
-      .activities-grid{
+    .utsav-grid{
         grid-template-columns:1fr;
-      }
-
-      .section-title h1{
-        font-size:36px;
-      }
-
-      .card-content h3{
-        font-size:26px;
-      }
-
     }
 
-    /* ===== FOOTER ===== */
+    .title-box h2{
+        font-size:42px;
+    }
+
+    .event-card{
+        flex-direction:column;
+    }
+}
+
+/* ===== FOOTER ===== */
 
 .mandir-footer{
   background:#8c000d;
@@ -529,12 +500,11 @@
     height:48px;
   }
 }
-
     </style>
     <link rel="stylesheet" href="nav-mobile.css">
 </head>
 <body>
-    <nav class="navbar">
+     <nav class="navbar">
     <!-- LOGO -->
     <div class="logo">
       <div class="logo-circle">ॐ</div>
@@ -551,7 +521,7 @@
     <ul class="nav-links">
       <li><a href="index.html">HOME</a></li>
       <li><a href="about.html">ABOUT</a></li>
-      <li><a href="our-works.html" class="active">OUR WORKS & ACTIVITIES</a></li>
+      <li><a href="our-works.html">OUR WORKS & ACTIVITIES</a></li>
       <li class="dropdown">
         <a href="#">
           COMMITTEE
@@ -563,135 +533,115 @@
         </ul>
       </li>
       <li><a href="Gallery.html">GALLERY</a></li>
-      <li><a href="Events.html">EVENTS</a></li>
+      <li><a href="Events.html" class="active">EVENTS</a></li>
       <!-- <li><a href="#">DONATE</a></li> -->
       <!-- <li><a href="#">CONTACT</a></li> -->
     </ul>
   </nav>
 
-    <section class="service-section">
+  <section class="utsav-section">
 
-    <div class="service-content">
-
-      <span>OUR WORKS</span>
-
-      <h1>
-        SERVICE IS OUR PRAYER
-      </h1>
-
+    <div class="title-box">
+        <p>EVENTS & ANNOUNCEMENTS</p>
+        <h2>Upcoming Utsav</h2>
+        <div class="line"></div>
     </div>
 
-  </section>
-
-  <section class="activities-section">
-
-    <div class="container">
-
-      <!-- Heading -->
-      <div class="section-title">
-
-        <span>COMMITTEE ACTIVITIES</span>
-
-        <h1>Where Devotion Meets Action</h1>
-
-        <div class="underline"></div>
-
-      </div>
-
-      <!-- Cards -->
-      <div class="activities-grid">
+    <div class="utsav-grid">
 
         <!-- Card 1 -->
-        <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1200&auto=format&fit=crop" alt="Food Distribution">
+        <div class="event-card active" style="background: #8a000f;">
+            <div class="date-box">
+                <h3>08</h3>
+                <span>MAR</span>
+            </div>
 
-          <div class="card-content">
-            <h3>Anna Daan (Food Distribution)</h3>
-
-            <p>
-              Daily community kitchen serving 500+ meals to pilgrims,
-              students and those in need.
-            </p>
-          </div>
+            <div class="event-info">
+                <h3>✧ Maha Shivratri</h3>
+                <h4>◷ ALL NIGHT, 6 PM ONWARDS</h4>
+                <p>Rudra abhishekam, night-long jagran and bel patra offerings.</p>
+            </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop" alt="Spiritual Education">
+        <div class="event-card">
+            <div class="date-box">
+                <h3>25</h3>
+                <span>MAR</span>
+            </div>
 
-          <div class="card-content">
-            <h3>Spiritual Education</h3>
-
-            <p>
-              Sanskrit classes, Vedic chanting and youth camps
-              preserving our oral traditions.
-            </p>
-          </div>
+            <div class="event-info">
+                <h3>Holi – Festival of Colours</h3>
+                <h4>◷ 10 AM</h4>
+                <p>Holika dahan the previous evening; community celebration with prasad.</p>
+            </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Festival Celebrations">
+        <div class="event-card">
+            <div class="date-box">
+                <h3>17</h3>
+                <span>APR</span>
+            </div>
 
-          <div class="card-content">
-            <h3>Festival Celebrations</h3>
-
-            <p>
-              Diwali, Janmashtami, Navratri and Shivratri —
-              celebrated with the entire community.
-            </p>
-          </div>
+            <div class="event-info">
+                <h3>Ram Navami</h3>
+                <h4>◷ 5 AM – 9 PM</h4>
+                <p>Birthday celebration of Lord Rama with continuous Ramayan paath.</p>
+            </div>
         </div>
 
         <!-- Card 4 -->
-        <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=1200&auto=format&fit=crop" alt="Charity Programs">
+        <div class="event-card">
+            <div class="date-box">
+                <h3>26</h3>
+                <span>AUG</span>
+            </div>
 
-          <div class="card-content">
-            <h3>Charity Programs</h3>
-
-            <p>
-              Medical aid, clothing drives and scholarships
-              for underprivileged children.
-            </p>
-          </div>
+            <div class="event-info">
+                <h3>Janmashtami</h3>
+                <h4>◷ FROM 7 PM</h4>
+                <p>Midnight aarti, jhanki darshan and dahi-handi for the children.</p>
+            </div>
         </div>
 
         <!-- Card 5 -->
-        <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop" alt="Temple Maintenance">
+        <div class="event-card">
+            <div class="date-box">
+                <h3>02</h3>
+                <span>OCT</span>
+            </div>
 
-          <div class="card-content">
-            <h3>Temple Maintenance</h3>
-
-            <p>
-              Preserving sacred art, deities and the structure
-              of our beloved mandir.
-            </p>
-          </div>
+            <div class="event-info">
+                <h3>Navratri Begins</h3>
+                <h4>◷ NINE NIGHTS</h4>
+                <p>Garba, devi paath and kanya pujan on Ashtami.</p>
+            </div>
         </div>
 
         <!-- Card 6 -->
-        <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Social Welfare">
+        <div class="event-card">
+            <div class="date-box">
+                <h3>01</h3>
+                <span>NOV</span>
+            </div>
 
-          <div class="card-content">
-            <h3>Social Welfare</h3>
-
-            <p>
-              Disaster relief, elderly care and partnerships
-              with local welfare organisations.
-            </p>
-          </div>
+            <div class="event-info">
+                <h3>Diwali – Festival of Lights</h3>
+                <h4>◷ SUNSET ONWARDS</h4>
+                <p>Lakshmi pujan, 1008 diya lighting and grand prasad distribution.</p>
+            </div>
         </div>
-
-      </div>
 
     </div>
 
-  </section>
+    <div class="bottom-note">
+        🗓 A full calendar is shared at the mandir entrance each Purnima.
+    </div>
 
- <!-- ===== FOOTER ===== -->
+</section>
+
+<!-- ===== FOOTER ===== -->
 
 <footer class="mandir-footer">
 
@@ -733,9 +683,9 @@
 
       <ul class="mandir-footer-links">
 
-        <li><a href="about.html">About the Mandir</a></li>
-        <li><a href="our-works.html">Our Works</a></li>
-        <li><a href="Events.html">Events</a></li>
+        <li><a href="#">About the Mandir</a></li>
+        <li><a href="#">Our Works</a></li>
+        <li><a href="#">Events</a></li>
 
       </ul>
 
@@ -780,7 +730,6 @@
   <div class="mandir-footer-bottom">Developed by Tarun Chetry</div>
 
 </footer>
-
 <script src="nav.js"></script>
 </body>
 </html>

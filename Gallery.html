@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OUR WORK</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <title>Gallery</title>
     <style>
-        *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body{
-      font-family:'Inter', sans-serif;
+    body {
+      /* font-family: "Poppins", sans-serif; */
+      background: #f5f2ed;
     }
 
-     /* NAVBAR */
+    /* NAVBAR */
     .navbar {
       width: 100%;
       position: sticky;
@@ -134,182 +133,87 @@
       }
     }
 
-    .service-section{
-      width:100%;
-      min-height:250px;
-      background:#8b000f;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:40px 20px;
-    }
 
-    .service-content span{
-      display:block;
-      color:#d8a327;
-      font-size:15px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      margin-bottom:25px;
-      font-weight:500;
-    }
+    .gallery-section{
+    width:85%;
+    margin:auto;
+    padding:40px 0;
+}
 
-    .service-content h1{
-      font-family:'Cormorant Garamond', serif;
-      color:#f6f2ed;
-      font-size:50px;
-      font-weight:300;
-      line-height:1;
-    }
+.heading{
+    text-align:center;
+    margin-bottom:40px;
+}
 
-    /* Responsive */
+.heading p{
+    color:#d98a3f;
+    letter-spacing:4px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
 
-    @media(max-width:900px){
+.heading h2{
+    font-size:60px;
+    color:#1c3557;
+    font-weight:500;
+    text-transform:capitalize;
+}
 
-      .service-content h1{
-        font-size:60px;
-      }
+.heading .line{
+    width:90px;
+    height:2px;
+    background:#d6b77a;
+    margin:15px auto;
+}
 
-    }
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:180px;
+    gap:15px;
+}
 
-    @media(max-width:600px){
+.item{
+    overflow:hidden;
+    border-radius:15px;
+}
 
-      .service-section{
-        min-height:250px;
-      }
+.item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.4s;
+}
 
-      .service-content span{
-        font-size:12px;
-        letter-spacing:4px;
-      }
+.item img:hover{
+    transform:scale(1.05);
+}
 
-      .service-content h1{
-        font-size:38px;
-        line-height:1.2;
-      }
+.tall{
+    grid-row:span 2;
+}
 
-    }
+.wide{
+    grid-column:span 2;
+}
 
-    .activities-section{
-      width:100%;
-      padding:70px 20px;
-      background:#f9f5f0;
-    }
-
-    .container{
-      max-width:1200px;
-      margin:auto;
-    }
-
-    /* Heading */
-
-    .section-title{
-      text-align:center;
-      margin-bottom:50px;
-    }
-
-    .section-title span{
-      display:block;
-      color:#e5893c;
-      font-size:13px;
-      letter-spacing:5px;
-      text-transform:uppercase;
-      margin-bottom:18px;
-      font-weight:600;
-    }
-
-    .section-title h1{
-      font-family:'Cormorant Garamond', serif;
-      font-size:64px;
-      font-weight:400;
-      color:#3d332f;
-      line-height:1.1;
-    }
-
-    .underline{
-      width:90px;
-      height:2px;
-      background:#d5b06c;
-      margin:18px auto 0;
-    }
-
-    /* Cards */
-
-    .activities-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-    }
-
-    .activity-card{
-      background:#fff;
-      border-radius:14px;
-      overflow:hidden;
-      border:1px solid #ddd1c4;
-      box-shadow:0 3px 10px rgba(0,0,0,0.05);
-      transition:0.3s ease;
-    }
-
-    .activity-card:hover{
-      transform:translateY(-5px);
-    }
-
-    .activity-card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      display:block;
-    }
-
-    .card-content{
-      padding:18px;
-    }
-
-    .card-content h3{
-      font-family:'Cormorant Garamond', serif;
-      font-size:30px;
-      font-weight:500;
-      color:#704b2f;
-      margin-bottom:10px;
-      line-height:1.1;
-    }
-
-    .card-content p{
-      font-size:14px;
-      line-height:1.7;
-      color:#777;
-    }
-
-    /* Responsive */
-
-    @media(max-width:950px){
-
-      .activities-grid{
+@media(max-width:900px){
+    .gallery-grid{
         grid-template-columns:repeat(2,1fr);
-      }
-
-      .section-title h1{
-        font-size:48px;
-      }
-
     }
+}
 
-    @media(max-width:650px){
-
-      .activities-grid{
+@media(max-width:600px){
+    .gallery-grid{
         grid-template-columns:1fr;
-      }
-
-      .section-title h1{
-        font-size:36px;
-      }
-
-      .card-content h3{
-        font-size:26px;
-      }
-
     }
+
+    .heading h2{
+        font-size:40px;
+    }
+}
 
     /* ===== FOOTER ===== */
 
@@ -529,7 +433,6 @@
     height:48px;
   }
 }
-
     </style>
     <link rel="stylesheet" href="nav-mobile.css">
 </head>
@@ -551,7 +454,7 @@
     <ul class="nav-links">
       <li><a href="index.html">HOME</a></li>
       <li><a href="about.html">ABOUT</a></li>
-      <li><a href="our-works.html" class="active">OUR WORKS & ACTIVITIES</a></li>
+      <li><a href="our-works.html">OUR WORKS & ACTIVITIES</a></li>
       <li class="dropdown">
         <a href="#">
           COMMITTEE
@@ -562,135 +465,57 @@
           <li><a href="previous-committee.html">Previous Committee Members</a></li>
         </ul>
       </li>
-      <li><a href="Gallery.html">GALLERY</a></li>
+      <li><a href="Gallery.html" class="active">GALLERY</a></li>
       <li><a href="Events.html">EVENTS</a></li>
       <!-- <li><a href="#">DONATE</a></li> -->
       <!-- <li><a href="#">CONTACT</a></li> -->
     </ul>
   </nav>
 
-    <section class="service-section">
 
-    <div class="service-content">
-
-      <span>OUR WORKS</span>
-
-      <h1>
-        SERVICE IS OUR PRAYER
-      </h1>
-
+  <section class="gallery-section">
+    <div class="heading">
+        <p>SACRED MOMENTS</p>
+        <h2>Gallery</h2>
+        <div class="line"></div>
     </div>
 
-  </section>
+    <div class="gallery-grid">
 
-  <section class="activities-section">
-
-    <div class="container">
-
-      <!-- Heading -->
-      <div class="section-title">
-
-        <span>COMMITTEE ACTIVITIES</span>
-
-        <h1>Where Devotion Meets Action</h1>
-
-        <div class="underline"></div>
-
-      </div>
-
-      <!-- Cards -->
-      <div class="activities-grid">
-
-        <!-- Card 1 -->
-        <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1200&auto=format&fit=crop" alt="Food Distribution">
-
-          <div class="card-content">
-            <h3>Anna Daan (Food Distribution)</h3>
-
-            <p>
-              Daily community kitchen serving 500+ meals to pilgrims,
-              students and those in need.
-            </p>
-          </div>
+        <div class="item tall">
+            <img src="img1.jpg" alt="">
         </div>
 
-        <!-- Card 2 -->
-        <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop" alt="Spiritual Education">
-
-          <div class="card-content">
-            <h3>Spiritual Education</h3>
-
-            <p>
-              Sanskrit classes, Vedic chanting and youth camps
-              preserving our oral traditions.
-            </p>
-          </div>
+        <div class="item">
+            <img src="img2.jpg" alt="">
         </div>
 
-        <!-- Card 3 -->
-        <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Festival Celebrations">
-
-          <div class="card-content">
-            <h3>Festival Celebrations</h3>
-
-            <p>
-              Diwali, Janmashtami, Navratri and Shivratri —
-              celebrated with the entire community.
-            </p>
-          </div>
+        <div class="item">
+            <img src="img3.jpg" alt="">
         </div>
 
-        <!-- Card 4 -->
-        <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=1200&auto=format&fit=crop" alt="Charity Programs">
-
-          <div class="card-content">
-            <h3>Charity Programs</h3>
-
-            <p>
-              Medical aid, clothing drives and scholarships
-              for underprivileged children.
-            </p>
-          </div>
+        <div class="item tall">
+            <img src="img4.jpg" alt="">
         </div>
 
-        <!-- Card 5 -->
-        <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop" alt="Temple Maintenance">
-
-          <div class="card-content">
-            <h3>Temple Maintenance</h3>
-
-            <p>
-              Preserving sacred art, deities and the structure
-              of our beloved mandir.
-            </p>
-          </div>
+        <div class="item">
+            <img src="img5.jpg" alt="">
         </div>
 
-        <!-- Card 6 -->
-        <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Social Welfare">
-
-          <div class="card-content">
-            <h3>Social Welfare</h3>
-
-            <p>
-              Disaster relief, elderly care and partnerships
-              with local welfare organisations.
-            </p>
-          </div>
+        <div class="item">
+            <img src="img6.jpg" alt="">
         </div>
 
-      </div>
+        <div class="item wide">
+            <img src="img7.jpg" alt="">
+        </div>
+
+        <div class="item">
+            <img src="img8.jpg" alt="">
+        </div>
 
     </div>
-
-  </section>
-
+</section>
  <!-- ===== FOOTER ===== -->
 
 <footer class="mandir-footer">
@@ -780,6 +605,7 @@
   <div class="mandir-footer-bottom">Developed by Tarun Chetry</div>
 
 </footer>
+
 
 <script src="nav.js"></script>
 </body>

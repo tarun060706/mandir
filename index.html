@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Temple</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nav-mobile.css">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
@@ -17,16 +18,41 @@
       <div class="logo-text">Shree Pitambar Pith Dham</div>
     </div>
 
+    <button class="mobile-menu-btn" type="button" aria-label="Open navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <!-- NAV LINKS -->
     <ul class="nav-links">
-      <li><a href="#" class="active">HOME</a></li>
+      <li><a href="index.html" class="active">HOME</a></li>
       <li><a href="about.html">ABOUT</a></li>
       <li><a href="our-works.html">OUR WORKS & ACTIVITIES</a></li>
-      <li><a href="committee.html">COMMITTEE</a></li>
-      <li><a href="#">GALLERY</a></li>
-      <li><a href="#">EVENTS</a></li>
+    <li class="dropdown">
+  <a href="#">
+    COMMITTEE
+    <i class="fa-solid fa-angle-down"></i>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li>
+      <a href="present-committee.html">
+        Present Committee Members
+      </a>
+    </li>
+
+    <li>
+      <a href="previous-committee.html">
+        Previous Committee Members
+      </a>
+    </li>
+  </ul>
+</li>
+      <li><a href="Gallery.html">GALLERY</a></li>
+      <li><a href="Events.html">EVENTS</a></li>
       <!-- <li><a href="#">DONATE</a></li> -->
-      <li><a href="#">CONTACT</a></li>
+      <!-- <li><a href="#">CONTACT</a></li> -->
     </ul>
   </nav>
 
@@ -49,11 +75,11 @@
 
       <div class="hero-buttons">
 
-        <a href="#" class="btn primary-btn">
+        <a href="our-works.html" class="btn primary-btn">
           View Our Works
         </a>
 
-        <a href="#" class="btn secondary-btn">
+        <a href="committee.html" class="btn secondary-btn">
           Meet The Committee
         </a>
 
@@ -154,7 +180,7 @@
 
     <div class="explore-btn">
 
-      <a href="#">
+      <a href="our-works.html">
         Explore All Our Work
       </a>
 
@@ -204,9 +230,9 @@
 
       <ul class="mandir-footer-links">
 
-        <li><a href="#">About the Mandir</a></li>
-        <li><a href="#">Our Works</a></li>
-        <li><a href="#">Events</a></li>
+        <li><a href="about.html">About the Mandir</a></li>
+        <li><a href="our-works.html">Our Works</a></li>
+        <li><a href="Events.html">Events</a></li>
 
       </ul>
 
@@ -252,5 +278,6 @@
 
 </footer>
 
+<script src="nav.js"></script>
 </body>
 </html>

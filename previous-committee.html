@@ -21,12 +21,16 @@
     /* NAVBAR */
     .navbar {
       width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
       background: #f6f2ed;
       border-top: 4px solid #2d2d2d;
       padding: 18px 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
     }
 
     /* LEFT LOGO */
@@ -82,7 +86,75 @@
 
     .nav-links .active {
       color: #ef8c2f;
+      font-weight: 600;
     }
+
+    .nav-links .active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      background: #ef8c2f;
+      border-radius: 999px;
+    }
+
+    /* ===== COMMITTEE DROPDOWN ===== */
+
+.dropdown{
+  position: relative;
+}
+
+.dropdown > a{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.dropdown-menu{
+  position:absolute;
+  top:160%;
+  left:0;
+  width:270px;
+  background:#f6f2ed;
+  list-style:none;
+  border-radius:12px;
+  padding:10px 0;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:.35s ease;
+  z-index:999;
+}
+
+.dropdown-menu li{
+  width:100%;
+}
+
+.dropdown-menu li a{
+  display:block;
+  padding:14px 22px;
+  color:#555;
+  font-size:13px;
+  letter-spacing:1px;
+  transition:.3s;
+}
+
+.dropdown-menu li a:hover{
+  background:#ef8c2f;
+  color:white;
+  padding-left:28px;
+}
+
+/* Show Dropdown */
+
+.dropdown:hover .dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
 
 
     /* RESPONSIVE */
@@ -152,7 +224,7 @@
 
     .title-box h1{
       font-family:'Cormorant Garamond', serif;
-      font-size:76px;
+      font-size:50px;
       font-weight:400;
       color:#3b322f;
       line-height:1;
@@ -238,6 +310,14 @@
       margin-bottom:22px;
     }
 
+    .committee-empty-message{
+      margin:40px 0 0;
+      color:#777;
+      font-size:16px;
+      text-align:center;
+      letter-spacing:1px;
+    }
+
     .divider{
       width:100%;
       height:1px;
@@ -293,7 +373,7 @@
     @media(max-width:500px){
 
       .title-box h1{
-        font-size:38px;
+        font-size:30px;
       }
 
       .member-card{
@@ -522,6 +602,7 @@
 }
 
     </style>
+    <link rel="stylesheet" href="nav-mobile.css">
 </head>
 <body>
      <nav class="navbar">
@@ -531,35 +612,70 @@
       <div class="logo-text">Shree Pitambar Pith Dham</div>
     </div>
 
+    <button class="mobile-menu-btn" type="button" aria-label="Open navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <!-- NAV LINKS -->
     <ul class="nav-links">
-      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="index.html">HOME</a></li>
       <li><a href="about.html">ABOUT</a></li>
       <li><a href="our-works.html">OUR WORKS & ACTIVITIES</a></li>
-      <li><a href="committee.html">COMMITTEE</a></li>
-      <li><a href="#">GALLERY</a></li>
-      <li><a href="#">EVENTS</a></li>
+      <li class="dropdown">
+  <a href="#">
+    COMMITTEE
+    <i class="fa-solid fa-angle-down"></i>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li>
+      <a href="present-committee.html">
+        Present Committee Members
+      </a>
+    </li>
+
+    <li>
+      <a href="previous-committee.html">
+        Previous Committee Members
+      </a>
+    </li>
+  </ul>
+</li>
+      <li><a href="Gallery.html">GALLERY</a></li>
+      <li><a href="Events.html">EVENTS</a></li>
       <!-- <li><a href="#">DONATE</a></li> -->
-      <li><a href="#">CONTACT</a></li>
+      <!-- <li><a href="#">CONTACT</a></li> -->
     </ul>
-  </nav>
+</nav>
 
    <section class="committee-section">
 
     <div class="container">
 
-      <!-- Top Content -->
       <div class="top-content">
 
-        <div class="title-box">
+  <div class="title-box">
+    <span>THE GUARDIANS</span>
+    <h1>Previous Committee Members</h1>
+  </div>
 
-          <span>THE GUARDIANS</span>
+  <!-- Year Filter -->
+  <div class="filter-box">
+    <!-- <i class="fa-solid fa-filter"></i> -->
 
-          <h1>Committee Members</h1>
+    <select class="year-filter" style="padding: 10px;">
+      <option value="">All Years</option>
+      <option value="2024 - 2025">2024 - 2025</option>
+      <option value="2022 - 2023">2022 - 2023</option>
+      <option value="2020 - 2021">2020 - 2021</option>
+      <option value="2018 - 2019">2018 - 2019</option>
+      <option value="2016 - 2017">2016 - 2017</option>
+    </select>
+  </div>
 
-        </div>
-
-        <!-- Search Box -->
+  <!-- Search Box -->
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" placeholder="Find a member...">
@@ -567,11 +683,14 @@
 
       </div>
 
+</div>
+
+
       <!-- Members Grid -->
       <div class="members-grid">
 
         <!-- Card 1 -->
-        <div class="member-card">
+        <div class="member-card" data-year="2024 - 2025">
 
           <img src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?q=80&w=1200&auto=format&fit=crop" alt="President">
 
@@ -599,7 +718,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="member-card">
+        <div class="member-card" data-year="2024 - 2025">
 
           <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="Treasurer">
 
@@ -627,7 +746,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="member-card">
+        <div class="member-card" data-year="2024 - 2025">
 
           <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="Secretary">
 
@@ -655,7 +774,7 @@
         </div>
 
         <!-- Card 4 -->
-        <div class="member-card">
+        <div class="member-card" data-year="2024 - 2025">
 
           <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=1200&auto=format&fit=crop" alt="Trustee">
 
@@ -678,6 +797,174 @@
           <div class="contact-info">
             <i class="fa-regular fa-envelope"></i>
             <span>trustee@sanatan.org</span>
+          </div>
+
+        </div>
+
+        <div class="member-card" data-year="2022 - 2023">
+
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop" alt="Former President">
+
+          <h3 class="member-name">Shri Mahesh Trivedi</h3>
+
+          <div class="member-role">President</div>
+
+          <p class="member-desc">
+            Guided mandir administration and seva activities during the 2022 - 2023 committee term.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="contact-info">
+            <i class="fa-solid fa-calendar"></i>
+            <span>2022 - 2023</span>
+          </div>
+
+        </div>
+
+        <div class="member-card" data-year="2022 - 2023">
+
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1200&auto=format&fit=crop" alt="Former Treasurer">
+
+          <h3 class="member-name">Smt. Kavita Joshi</h3>
+
+          <div class="member-role">Treasurer</div>
+
+          <p class="member-desc">
+            Managed finance records and donation transparency for the previous committee.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="contact-info">
+            <i class="fa-solid fa-calendar"></i>
+            <span>2022 - 2023</span>
+          </div>
+
+        </div>
+
+        <div class="member-card" data-year="2020 - 2021">
+
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop" alt="Former Secretary">
+
+          <h3 class="member-name">Shri Deepak Rao</h3>
+
+          <div class="member-role">Secretary</div>
+
+          <p class="member-desc">
+            Coordinated rituals, meeting records, and volunteer communication from 2020 - 2021.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="contact-info">
+            <i class="fa-solid fa-calendar"></i>
+            <span>2020 - 2021</span>
+          </div>
+
+        </div>
+
+        <div class="member-card" data-year="2020 - 2021">
+
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop" alt="Former Trustee">
+
+          <h3 class="member-name">Smt. Nirmala Singh</h3>
+
+          <div class="member-role">Trustee</div>
+
+          <p class="member-desc">
+            Supported welfare planning and mandir development during the 2020 - 2021 term.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="contact-info">
+            <i class="fa-solid fa-calendar"></i>
+            <span>2020 - 2021</span>
+          </div>
+
+        </div>
+
+        <div class="member-card" data-year="2018 - 2019">
+
+          <img src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?q=80&w=1200&auto=format&fit=crop" alt="Former President">
+
+          <h3 class="member-name">Pt. Harish Chandra</h3>
+
+          <div class="member-role">President</div>
+
+          <p class="member-desc">
+            Led temple event planning and devotee outreach work in the 2018 - 2019 committee.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="contact-info">
+            <i class="fa-solid fa-calendar"></i>
+            <span>2018 - 2019</span>
+          </div>
+
+        </div>
+
+        <div class="member-card" data-year="2018 - 2019">
+
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop" alt="Former Treasurer">
+
+          <h3 class="member-name">Smt. Rekha Agarwal</h3>
+
+          <div class="member-role">Treasurer</div>
+
+          <p class="member-desc">
+            Maintained contribution records and supported festival fund distribution.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="contact-info">
+            <i class="fa-solid fa-calendar"></i>
+            <span>2018 - 2019</span>
+          </div>
+
+        </div>
+
+        <div class="member-card" data-year="2016 - 2017">
+
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="Former Secretary">
+
+          <h3 class="member-name">Shri Om Prakash</h3>
+
+          <div class="member-role">Secretary</div>
+
+          <p class="member-desc">
+            Organized committee records and seva scheduling for the 2016 - 2017 term.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="contact-info">
+            <i class="fa-solid fa-calendar"></i>
+            <span>2016 - 2017</span>
+          </div>
+
+        </div>
+
+        <div class="member-card" data-year="2016 - 2017">
+
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Former Trustee">
+
+          <h3 class="member-name">Smt. Padma Devi</h3>
+
+          <div class="member-role">Trustee</div>
+
+          <p class="member-desc">
+            Served as a trustee and helped guide temple welfare efforts with devotion.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="contact-info">
+            <i class="fa-solid fa-calendar"></i>
+            <span>2016 - 2017</span>
           </div>
 
         </div>
@@ -730,9 +1017,9 @@
 
       <ul class="mandir-footer-links">
 
-        <li><a href="#">About the Mandir</a></li>
-        <li><a href="#">Our Works</a></li>
-        <li><a href="#">Events</a></li>
+        <li><a href="about.html">About the Mandir</a></li>
+        <li><a href="our-works.html">Our Works</a></li>
+        <li><a href="Events.html">Events</a></li>
 
       </ul>
 
@@ -778,5 +1065,7 @@
 
 </footer>
 
+<script src="committee-search.js"></script>
+<script src="nav.js"></script>
 </body>
 </html>

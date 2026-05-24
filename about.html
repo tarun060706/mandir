@@ -21,12 +21,16 @@
     /* NAVBAR */
     .navbar {
       width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
       background: #f6f2ed;
       border-top: 4px solid #2d2d2d;
       padding: 18px 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
     }
 
     /* LEFT LOGO */
@@ -82,6 +86,18 @@
 
     .nav-links .active {
       color: #ef8c2f;
+      font-weight: 600;
+    }
+
+    .nav-links .active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      background: #ef8c2f;
+      border-radius: 999px;
     }
 
 
@@ -761,6 +777,7 @@
   }
 }
     </style>
+    <link rel="stylesheet" href="nav-mobile.css">
 </head>
 <body>
     <nav class="navbar">
@@ -770,16 +787,31 @@
       <div class="logo-text">Shree Pitambar Pith Dham</div>
     </div>
 
+    <button class="mobile-menu-btn" type="button" aria-label="Open navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <!-- NAV LINKS -->
     <ul class="nav-links">
-      <li><a href="index.html" class="active">HOME</a></li>
-      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html" class="active">ABOUT</a></li>
       <li><a href="our-works.html">OUR WORKS & ACTIVITIES</a></li>
-      <li><a href="committee.html">COMMITTEE</a></li>
-      <li><a href="#">GALLERY</a></li>
-      <li><a href="#">EVENTS</a></li>
+      <li class="dropdown">
+        <a href="#">
+          COMMITTEE
+          <i class="fa-solid fa-angle-down"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="present-committee.html">Present Committee Members</a></li>
+          <li><a href="previous-committee.html">Previous Committee Members</a></li>
+        </ul>
+      </li>
+      <li><a href="Gallery.html">GALLERY</a></li>
+      <li><a href="Events.html">EVENTS</a></li>
       <!-- <li><a href="#">DONATE</a></li> -->
-      <li><a href="#">CONTACT</a></li>
+      <!-- <li><a href="#">CONTACT</a></li> -->
     </ul>
   </nav>
 
@@ -845,80 +877,6 @@
     </div>
   </section>
 
-   <section class="timing-section">
-
-    <div class="container">
-
-      <!-- Heading -->
-      <div class="section-title">
-
-        <span>DAILY RITUALS</span>
-
-        <h1>
-          Temple Timings & Pūjā
-        </h1>
-
-        <div class="underline"></div>
-
-      </div>
-
-      <!-- Timing Table -->
-      <div class="timing-table">
-
-        <div class="timing-row">
-          <div class="time">05:00 AM</div>
-          <div class="ritual">Mangala Aarti</div>
-          <div class="description">
-            Awakening of the deity with conch and bell
-          </div>
-        </div>
-
-        <div class="timing-row">
-          <div class="time">06:00 AM</div>
-          <div class="ritual">Morning Aarti</div>
-          <div class="description">
-            Daily darshan and abhishekam
-          </div>
-        </div>
-
-        <div class="timing-row">
-          <div class="time">12:00 PM</div>
-          <div class="ritual">Bhog Aarti</div>
-          <div class="description">
-            Offering of food to the deity
-          </div>
-        </div>
-
-        <div class="timing-row">
-          <div class="time">04:30 PM</div>
-          <div class="ritual">Evening Darshan</div>
-          <div class="description">
-            Open for devotees
-          </div>
-        </div>
-
-        <div class="timing-row">
-          <div class="time">07:30 PM</div>
-          <div class="ritual">Sandhya Aarti</div>
-          <div class="description">
-            Evening lamp ceremony
-          </div>
-        </div>
-
-        <div class="timing-row">
-          <div class="time">09:00 PM</div>
-          <div class="ritual">Shayan Aarti</div>
-          <div class="description">
-            Closing rituals for the night
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
   <footer class="mandir-footer">
 
   <div class="mandir-footer-container">
@@ -959,9 +917,9 @@
 
       <ul class="mandir-footer-links">
 
-        <li><a href="#">About the Mandir</a></li>
-        <li><a href="#">Our Works</a></li>
-        <li><a href="#">Events</a></li>
+        <li><a href="about.html">About the Mandir</a></li>
+        <li><a href="our-works.html">Our Works</a></li>
+        <li><a href="Events.html">Events</a></li>
 
       </ul>
 
@@ -1007,5 +965,6 @@
 
 </footer>
 
+<script src="nav.js"></script>
 </body>
 </html>

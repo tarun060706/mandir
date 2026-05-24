@@ -12,12 +12,16 @@
     /* NAVBAR */
     .navbar {
       width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
       background: #f6f2ed;
       border-top: 4px solid #2d2d2d;
       padding: 18px 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      box-shadow: 0 4px 18px rgba(204, 166, 166, 0.08);
     }
 
     /* LEFT LOGO */
@@ -73,8 +77,75 @@
 
     .nav-links .active {
       color: #ef8c2f;
+      font-weight: 600;
     }
 
+    .nav-links .active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      background: #ef8c2f;
+      border-radius: 999px;
+    }
+
+    /* ===== COMMITTEE DROPDOWN ===== */
+
+.dropdown{
+  position: relative;
+}
+
+.dropdown > a{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.dropdown-menu{
+  position:absolute;
+  top:160%;
+  left:0;
+  width:270px;
+  background:#f6f2ed;
+  list-style:none;
+  border-radius:12px;
+  padding:10px 0;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:.35s ease;
+  z-index:999;
+}
+
+.dropdown-menu li{
+  width:100%;
+}
+
+.dropdown-menu li a{
+  display:block;
+  padding:14px 22px;
+  color:#555;
+  font-size:13px;
+  letter-spacing:1px;
+  transition:.3s;
+}
+
+.dropdown-menu li a:hover{
+  background:#ef8c2f;
+  color:white;
+  padding-left:28px;
+}
+
+/* Show Dropdown */
+
+.dropdown:hover .dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
 
     /* RESPONSIVE */
     @media (max-width: 1200px) {
