@@ -40,17 +40,23 @@
     }
 
     .logo-circle {
-      width: 48px;
-      height: 48px;
-      background: #ef8c2f;
+      width: 52px;
+      height: 52px;
+      background: #fff;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 26px;
-      font-weight: bold;
+      overflow: hidden;
+      border: 2px solid #ef8c2f;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .logo-text {
@@ -530,6 +536,49 @@
   }
 }
 
+.history-content small{
+      color:#d9822b;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .history-content h1{
+      font-family:'Cormorant Garamond', serif;
+      font-size:35px;
+      line-height:0.95;
+      font-weight:300;
+      margin:18px 0 35px;
+      color:#3d332d;
+    }
+
+    .history-content p{
+      font-size:18px;
+      line-height:2;
+      margin-bottom:28px;
+      color:#666;
+    }
+
+    @media(max-width:950px){
+
+      .history-content h1{
+        font-size:52px;
+      }
+    }
+
+    @media(max-width:600px){
+
+     
+      .history-content h1{
+        font-size:40px;
+      }
+
+      .history-content p{
+        font-size:16px;
+        line-height:1.8;
+      }
+    }
     </style>
     <link rel="stylesheet" href="nav-mobile.css">
 </head>
@@ -537,8 +586,10 @@
     <nav class="navbar">
     <!-- LOGO -->
     <div class="logo">
-      <div class="logo-circle">ॐ</div>
-      <div class="logo-text">Shree Pitambar Pith Dham</div>
+      <div class="logo-circle">
+        <img src="logo.jpeg" alt="Purvanchal Pranami Yuva Parishad logo">
+      </div>
+      <div class="logo-text">Purvanchal Pranami Yuva Parishad</div>
     </div>
 
     <button class="mobile-menu-btn" type="button" aria-label="Open navigation" aria-expanded="false">
@@ -585,6 +636,24 @@
 
   <section class="activities-section">
 
+    <div class="history-content" style="padding: 50px;">
+
+        <small>OUR WORKS & ACTIVITIES</small>
+
+        <p>
+          At the present time, the Purvanchal Pranami Yuva Parishad has been actively engaged in a wide range of social, educational, cultural, and spiritual activities dedicated to the welfare of society and the upliftment of the community. Guided by the principles of service, discipline, unity, and humanity, the organization continuously strives to inspire the younger generation while preserving religious and cultural values.
+        </p>
+
+        <p>
+        Working in close coordination and harmony with the Purvanchal Pranami Dharma Parishad, Baijuraj Sangh, Kesharbhai Mandali, and various affiliated temples and branches, the Parishad has successfully participated in and supported numerous religious, social, and community-centered programs. Through collective cooperation and mutual understanding, the organization has continued to strengthen spiritual unity and community participation across different regions.
+        The organization has also undertaken religious journeys, spiritual gatherings, and devotional outreach programs in areas where religious awareness and satsang activities were limited. By reaching different communities and encouraging participation in spiritual discussions and devotional assemblies, the Parishad has played an important role in spreading religious harmony, moral values, and spiritual consciousness among people.
+        </p>
+
+        <p>
+          Furthermore, the Parishad has actively visited different regions and affiliated branches for organizational inspections, coordination, and guidance. Through such visits, the organization has continuously worked towards branch strengthening, improving unity among members, encouraging active participation, and enhancing the effectiveness of local committees and youth involvement.
+        </p>
+      </div>
+
     <div class="container">
 
       <!-- Heading -->
@@ -603,14 +672,13 @@
 
         <!-- Card 1 -->
         <div class="activity-card">
-          <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1200&auto=format&fit=crop" alt="Food Distribution">
+          <img src="" alt="Blood Donation Camps">
 
           <div class="card-content">
-            <h3>Anna Daan (Food Distribution)</h3>
+            <h3>Blood Donation Camps</h3>
 
             <p>
-              Daily community kitchen serving 500+ meals to pilgrims,
-              students and those in need.
+             The Parishad regularly organizes and supports blood donation camps with the noble objective of saving lives and spreading awareness about humanitarian responsibility and social service among youth and community members.
             </p>
           </div>
         </div>
@@ -620,11 +688,11 @@
           <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop" alt="Spiritual Education">
 
           <div class="card-content">
-            <h3>Spiritual Education</h3>
+            <h3>Spiritual Education for children</h3>
 
             <p>
-              Sanskrit classes, Vedic chanting and youth camps
-              preserving our oral traditions.
+              The organization also conducts and supports religious and moral education for young children, helping them understand spiritual values, discipline, respect, humanity, and cultural traditions from an early age. Through such initiatives, children are guided toward positive character building and ethical living rooted in spiritual wisdom.
+Through these meaningful initiatives and selfless contributions, the Purvanchal Pranami Yuva Parishad continues to strengthen the spirit of service, education, spirituality, culture, and youth empowerment while working devotedly for the betterment of society and future generations.
             </p>
           </div>
         </div>
@@ -685,6 +753,73 @@
           </div>
         </div>
 
+        <!-- Card 7 -->
+        <div class="activity-card">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop" alt="Temple Maintenance">
+
+          <div class="card-content">
+            <h3>Felicitation and Encouragement of Meritorious Students</h3>
+
+            <p>
+              Meritorious and academically outstanding students are honored and recognized from time to time in order to encourage educational excellence and inspire students to pursue higher achievements with dedication and confidence.
+            </p>
+          </div>
+        </div>
+
+         <!-- Card 8 -->
+        <div class="activity-card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Social Welfare">
+
+          <div class="card-content">
+            <h3>Volunteer Service in Religious Programs</h3>
+
+            <p>
+            Members of the Parishad actively serve as volunteers during religious gatherings and spiritual events, contributing to discipline, coordination, hospitality, and the successful management of programs with sincerity and devotion.
+            Support and Cooperation in Religious Programs:
+            In collaboration with various religious organizations, temples, and community branches, the Parishad has continuously extended its cooperation and support in conducting spiritual gatherings, devotional programs, festivals, and other religious activities for the benefit of the community.
+            </p>
+          </div>
+        </div>
+
+         <!-- Card 9 -->
+        <div class="activity-card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Social Welfare">
+
+          <div class="card-content">
+            <h3>Religious Outreach and Satsang Activities</h3>
+
+            <p>
+              The organization has conducted religious tours, satsang programs, and spiritual awareness campaigns in different regions, especially in areas where religious participation and spiritual guidance were comparatively limited, with the objective of promoting devotion, unity, and moral values.
+            </p>
+          </div>
+        </div>
+
+         <!-- Card 10 -->
+        <div class="activity-card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Social Welfare">
+
+          <div class="card-content">
+            <h3>Branch Inspection and Organizational Strengthening:</h3>
+
+            <p>
+             The Parishad regularly visits its affiliated branches and local committees in different areas to inspect activities, provide guidance, strengthen coordination, and encourage active youth participation for the overall growth and strengthening of the organization.
+            </p>
+          </div>
+        </div>
+
+         <!-- Card 11 -->
+        <div class="activity-card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Social Welfare">
+
+          <div class="card-content">
+            <h3> Food Distribution and Community Service: </h3>
+
+            <p>
+            During religious and social programs, the organization actively participates in food distribution and various community service activities, reflecting the timeless values of compassion, equality, unity, and selfless service to humanity.
+            </p>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -703,12 +838,8 @@
 
       <div class="mandir-footer-logo-wrap">
 
-        <div class="mandir-footer-logo-circle">
-          ॐ
-        </div>
-
         <div class="mandir-footer-logo-text">
-          SHREE PITAMBAR PITH DHAM
+          PURVANCHAL PRANAMI YUVA PARISHAD
         </div>
 
       </div>

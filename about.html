@@ -41,17 +41,23 @@
     }
 
     .logo-circle {
-      width: 48px;
-      height: 48px;
-      background: #ef8c2f;
+      width: 52px;
+      height: 52px;
+      background: #fff;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 26px;
-      font-weight: bold;
+      overflow: hidden;
+      border: 2px solid #ef8c2f;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .logo-text {
@@ -356,18 +362,18 @@
       max-width:1200px;
       width:100%;
       display:grid;
-      grid-template-columns:1fr 1fr;
+      /* grid-template-columns:1fr 1fr; */
       gap:60px;
       align-items:center;
     }
 
-    .history-image img{
+    /* .history-image img{
       width:100%;
       height:700px;
       object-fit:cover;
       border-radius:20px;
       box-shadow:0 15px 35px rgba(0,0,0,0.15);
-    }
+    } */
 
     .history-content small{
       color:#d9822b;
@@ -783,8 +789,10 @@
     <nav class="navbar">
     <!-- LOGO -->
     <div class="logo">
-      <div class="logo-circle">ॐ</div>
-      <div class="logo-text">Shree Pitambar Pith Dham</div>
+      <div class="logo-circle">
+        <img src="logo.jpeg" alt="Purvanchal Pranami Yuva Parishad logo">
+      </div>
+      <div class="logo-text">Purvanchal Pranami Yuva Parishad</div>
     </div>
 
     <button class="mobile-menu-btn" type="button" aria-label="Open navigation" aria-expanded="false">
@@ -817,9 +825,9 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h3 class="subtitle">About The Mandir</h3>
+      <h3 class="subtitle">About The Committee</h3>
       <h1 class="main-title">
-        A Lamp Lit in 1984,
+        A Lamp Lit in 1998,
         <span class="highlight">Still Burning Bright</span>
       </h1>
     </div>
@@ -830,9 +838,9 @@
     <div class="history-container">
 
       <!-- Left Image -->
-      <div class="history-image">
+      <!-- <div class="history-image">
         <img src="aboutmandir.png" alt="Temple Image">
-      </div>
+      </div> -->
 
       <!-- Right Content -->
       <div class="history-content">
@@ -844,31 +852,43 @@
         </h1>
 
         <p>
-          Founded in 1984 by a small circle of devoted families,
-          Shree Sanatan Mandir began as a humble shrine in a single room.
-          Through decades of community seva, it has grown into a vibrant
-          cultural and spiritual sanctuary — yet the original lamp lit on
-          its first day continues to burn without interruption.
+          The Purvanchal Pranami Yuva Parishad was established with the noble vision of uniting the youth of the North-Eastern region in the fields of spirituality, voluntary service, culture, and social progress. Under the divine guidance and leadership of His Holiness 108 Present Gadipati Mohanpriya Charji Ji Maharaj of Kalimpong Mangal Dham, the organization was formally founded on 27th April 1998 at the sacred land of Pitambar Peeth, Rangchali. The foundation of this council was inspired by a deep concern that the younger generation should remain connected to the path of Dharma, morality, spirituality, and cultural values. The founders envisioned a disciplined and organized platform where youths could come together with unity, devotion, and responsibility, working hand in hand for both religious and humanitarian causes.
         </p>
 
         <p>
-          Every stone, every carving, every garland here has been offered
-          by hands that believe service to others is service to the divine.
+          Since its establishment, this organization has remained a strong and active institution dedicated to serving the Pranami community, especially throughout the Purvanchal region of Assam. The organization has continuously worked toward promoting religious, cultural, and social activities among devotees and society.
+          From Suklai, Nojan, Spacepur, and Suklai Jambei regions to various temple areas, the organization has actively coordinated and supported religious programs in several temples and sacred places. These include the Four Temple areas, Char Mile, Panibhanda, Nojan Krishna Pranami Mandir, Ghanshali Pitambar Peeth, Ghanshatra Rudai Mandir, and many other religious centers. Various spiritual and devotional programs have been regularly organized in these places.
         </p>
 
         <div class="history-content">
             <small>OUR VISION & MISSION</small>
 
             <p>
-            At Shree Pitambar Pith Dham, our vision is to create a sanctuary where
-            ancient wisdom meets modern devotion — a place where every visitor feels
-            the warmth of community and the light of spiritual growth.
+            The primary objective of the Purvanchal Pranami Yuva Parishad is to ensure that the youth do not drift away from spiritual wisdom and righteous living in the rapidly changing modern world. The organization encourages young minds to become socially aware, culturally enriched, spiritually awakened, and voluntarily dedicated toward the welfare of society and the protection of Dharma.
             </p>
 
             <p>
-                Our mission is to preserve and share our sacred traditions through selfless
-                service, educational programs, and cultural events that inspire and uplift
-                all who walk through our doors.
+                Since its inception, the Parishad has continuously promoted the ideals of harmony, selfless service, collective responsibility, and moral leadership among the youth. It seeks to create a generation that is not only devoted to religious values but also committed to social development, cultural preservation, and economic empowerment for the betterment of the community.
+            </p>
+
+            <p>
+              The Parishad strongly believes that the future of Dharma and society rests upon the strength, discipline, and awareness of its youth. Therefore, it inspires young individuals to actively participate in religious activities, social service, educational initiatives, cultural programs, and humanitarian efforts with sincerity and dedication.
+            </p>
+
+            <p>
+              Over the years, the Purvanchal Pranami Yuva Parishad has become more than just an organization; it has evolved into a movement of unity, devotion, and progressive thinking. Guided by spiritual blessings and collective efforts, it continues to work tirelessly toward building a strong, awakened, and compassionate society rooted in the eternal values of Sanatan Dharma and Pranami philosophy.
+            </p>
+
+            <p>
+              With faith in spirituality, dedication to service, and commitment to unity, the Parishad continues its journey toward a brighter and more harmonious future for the coming generations.
+            </p>
+        </div>
+
+        <div class="history-content">
+            <small>Area of Operation</small>
+
+            <p>
+              The area of operation of this organization shall include all places within the different states of Purvanchal where followers of Shri Krishna Pranami Dharma reside. If necessary, the organization may coordinate and cooperate with national or international religious organizations or with the national government.
             </p>
 
         </div>
@@ -887,12 +907,12 @@
 
       <div class="mandir-footer-logo-wrap">
 
-        <div class="mandir-footer-logo-circle">
-          ॐ
-        </div>
+        <!-- <div class="mandir-footer-logo-circle">
+          <img src="logo.jpeg" alt="Purvanchal Pranami Yuva Parishad logo">
+        </div> -->
 
         <div class="mandir-footer-logo-text">
-          SHREE PITAMBAR PITH DHAM
+          PURVANCHAL PRANAMI YUVA PARISHAD
         </div>
 
       </div>
