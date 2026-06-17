@@ -195,7 +195,7 @@
       position:relative;
       background:
       linear-gradient(rgba(20,10,5,0.52),rgba(20,10,5,0.62)),
-      url('logo.jpeg') center/100% 100% no-repeat;
+      url('frontphoto/logo.jpeg') center/100% 100% no-repeat;
       display:flex;
       justify-content:center;
       align-items:center;
